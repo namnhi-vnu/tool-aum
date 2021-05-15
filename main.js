@@ -36,7 +36,7 @@ function setTimess() {
         request.send(formData);
         const modifi = document.querySelector('.app_desc');
 
-    } else if (hour === 8 && minute === 48 && second === 0) {
+    } else if (hour === 12 && minute === 10 && second === 0) {
         /**
          * New Data auto
          */
@@ -48,7 +48,7 @@ function setTimess() {
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
 
-    } else if (hour === 8 && minute === 56 && second === 0) {
+    } else if (hour === 17 && minute === 5 && second === 0) {
         /**
          * New Data auto
          */
@@ -61,7 +61,7 @@ function setTimess() {
         var request = new XMLHttpRequest();
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
-        ghiNgayChamCong();
+        //ghiNgayChamCong();
     }
 
 }
