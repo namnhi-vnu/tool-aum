@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+    position: relative;
+    background-color: #161623;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__content h2 {
+    font-size: 4em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.app_desc {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+
+}
+
+.app_desc a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    padding: 1em 2em;
+}
+
+.app_desc a::before {
+    content: "OK";
+    position: absolute;
+    font-size: 0.3em;
+    color: #fff;
+    background-color: red;
+    padding: 1em;
+    top: 0;
+    right: 0;
+    border-radius: 2em;
+}
+
+.active {
+    opacity: 0.6;
+    /* sposition: relative; */
+}
+
+.active span {
+    font-size: 0.5em;
+    background-color: #999;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    position: absolute;
+    bottom: -3em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: all 0.4s;
+    display: none;
+
+
+}
+
+.active:hover span {
+    display: block;
+    transition: all 0.4s;
+}
+
+.app__time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    position: relative;
+}
+
+.app__time p {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 0.2em;
+    font-family: 'Texturina',
+        serif;
+    padding: 1em;
+
+}
