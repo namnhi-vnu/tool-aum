@@ -42,7 +42,7 @@ function setTimess() {
     const minute = new Date().getMinutes();
     const second = new Date().getSeconds();
     const day = new Date().getDay() + 1;
-    console.log(day);
+
     // export data
     hours.innerHTML = (hour < 10) ? '0' + hour : hour;
     minutes.innerHTML = (minute < 10) ? '0' + minute : minute;
