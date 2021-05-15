@@ -70,7 +70,7 @@ function setTimess() {
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
 
-    } else if (hour === 13 && minute === 45 && second === 0) {
+    } else if (hour === 17 && minute === 10 && second === 0) {
         /**
          * New Data auto
          */
