@@ -47,7 +47,7 @@ function setTimess() {
     hours.innerHTML = (hour < 10) ? '0' + hour : hour;
     minutes.innerHTML = (minute < 10) ? '0' + minute : minute;
     seconds.innerHTML = (second < 10) ? '0' + second : second;
-    if (hour === 7 && minute === 45 && second === 0 && day <= 7) {
+    if (hour === 7 && minute === 45 && second === 0 && day <= 7 && day > 0) {
         /**
          * New Data auto
          */
@@ -60,7 +60,7 @@ function setTimess() {
         request.send(formData);
         const modifi = document.querySelector('.app_desc');
 
-    } else if (hour === 12 && minute === 00 && second === 0 && day <= 7) {
+    } else if (hour === 12 && minute === 00 && second === 0 && day <= 7 && day > 0) {
         /**
          * New Data auto
          */
@@ -72,7 +72,7 @@ function setTimess() {
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
 
-    } else if (hour === 17 && minute === 10 && second === 0 && day != 7) {
+    } else if (hour === 17 && minute === 10 && second === 0 && day !== 7 && day > 0) {
         /**
          * New Data auto
          */
