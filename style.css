@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Texturina:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 * {
     padding: 0;
@@ -20,6 +21,9 @@ section {
     font-size: 4em;
     font-weight: 600;
     color: #fff;
+    font-family: 'Amatic SC',
+        cursive;
+    text-align: center;
 }
 
 .app_desc {
