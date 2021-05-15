@@ -2,8 +2,8 @@
 const hours = document.querySelector('.hour');
 const minutes = document.querySelector('.minute');
 const seconds = document.querySelector('.second');
-
-
+const active = document.querySelectorAll('.notification');
+console.log(active);
 // read file and write file
 function ghiNgayChamCong() {
     const dateCham = new Date();
@@ -36,14 +36,14 @@ function setTimess() {
         request.send(formData);
         const modifi = document.querySelector('.app_desc');
 
-    } else if (hour === 12 && minute === 10 && second === 0) {
+    } else if (hour === 10 && minute === 25 && second === 0) {
         /**
          * New Data auto
          */
         var formData = new FormData();
-        formData.append('entry.196786207', 'Hoàng Anh Minh');
-        formData.append('entry.718595202', 'Tester');
-        formData.append('entry.1580319989', 'Sáng');
+        formData.append('entry.196786207', 'Hoàng Anh Văn');
+        formData.append('entry.718595202', 'Dev');
+        formData.append('entry.1580319989', 'Trưa');
         var request = new XMLHttpRequest();
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
@@ -66,4 +66,4 @@ function setTimess() {
 
 }
 setInterval(setTimess, 1000);
-ghiNgayChamCong();
+//ghiNgayChamCong();
