@@ -10,23 +10,30 @@ const seconds = document.querySelector('.second');
 const active = document.querySelectorAll('.notification');
 const desc = document.querySelector('.desc');
 
+function ActiveFrontEnd() {
+    const hour = new Date().getHours();
+    const minute = new Date().getMinutes();
 
-const hour = new Date().getHours();
-const minute = new Date().getMinutes();
-const second = new Date().getSeconds();
 
-for (var i = 0; i <= active.length; i++) {
-    if (hour >= 8 && hour < 12) {
-        active[0].classList.add('active');
-        desc.innerText = 'Đã Chấm Công';
-    } else if (hour >= 8 && hour <= 12) {
-        active[0].classList.add('active');
-        desc.innerText = 'Đã Chấm Công';
-    } else if (hour >= 17 && hour <= 23 && minute < 59) {
-        active[0].classList.add('active');
-        desc.innerText = 'Đã Chấm Công';
+    for (var i = 0; i <= active.length; i++) {
+        if (hour >= 8 && hour < 12) {
+            active[0].classList.add('active');
+            desc.style.display = block;
+        } else if (hour >= 12 && hour < 17) {
+            active[0].classList.add('active');
+            active[1].classList.add('active');
+            desc.innerText = 'Đã Chấm Công';
+        } else if (hour >= 17 && hour <= 23 && minute < 59) {
+            active[0].classList.add('active');
+            active[1].classList.add('active');
+            active[2].classList.add('active');
+            desc.innerText = 'Đã Chấm Công';
+
+        }
     }
 }
+
+
 
 // function Post Data
 function setTimess() {
@@ -63,7 +70,7 @@ function setTimess() {
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
 
-    } else if (hour === 17 && minute === 5 && second === 0) {
+    } else if (hour === 13 && minute === 45 && second === 0) {
         /**
          * New Data auto
          */
@@ -87,3 +94,4 @@ function setTimess() {
     years.innerHTML = y;
 }
 setInterval(setTimess, 1000);
+setInterval(ActiveFrontEnd, 1000);
