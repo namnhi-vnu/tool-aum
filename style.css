@@ -96,3 +96,21 @@ section {
     padding: 1em;
 
 }
+
+.app__time span {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 0.4em;
+}
+
+#datesnow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+#datesnow p {
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+}
