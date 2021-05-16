@@ -8,26 +8,28 @@ const hours = document.querySelector('.hour');
 const minutes = document.querySelector('.minute');
 const seconds = document.querySelector('.second');
 const active = document.querySelectorAll('.notification');
-const desc = document.querySelector('.desc');
+const descs = document.querySelector('.desc');
 
 function ActiveFrontEnd() {
     const hour = new Date().getHours();
     const minute = new Date().getMinutes();
-
+    const second = new Date().getSeconds();
 
     for (var i = 0; i <= active.length; i++) {
         if (hour >= 8 && hour < 12) {
             active[0].classList.add('active');
-            //desc.style.display = block;
+            if (second === 0) {
+                descs.style.display = block;
+            }
         } else if (hour >= 12 && hour < 17) {
             active[0].classList.add('active');
             active[1].classList.add('active');
-            desc.innerText = 'Đã Chấm Công';
+            descs.innerText = 'Đã Chấm Công';
         } else if (hour >= 17 && hour <= 23 && minute < 59) {
             active[0].classList.add('active');
             active[1].classList.add('active');
             active[2].classList.add('active');
-            desc.innerText = 'Đã Chấm Công';
+            descs.innerText = 'Đã Chấm Công';
 
         }
     }
