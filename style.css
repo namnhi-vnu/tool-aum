@@ -5,7 +5,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Amatic SC',
+        cursive;
 }
 
 section {
@@ -121,4 +122,19 @@ section {
 
 .desc {
     display: none;
+}
+
+.app__descs {
+    color: #fff;
+    font-size: 2em;
+    position: relative;
+}
+
+.app .app__descs h2 {
+    position: relative;
+    font-family: 'Amatic SC',
+        cursive;
+    padding: 1.5em;
+    border: 1px solid #eee;
+    border-radius: 1em;
 }

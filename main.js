@@ -3,12 +3,13 @@
 const dates = document.querySelector('.date');
 const months = document.querySelector('.month');
 const years = document.querySelector('.year');
-
+const appcontent = document.querySelector('.app__content');
 const hours = document.querySelector('.hour');
 const minutes = document.querySelector('.minute');
 const seconds = document.querySelector('.second');
 const active = document.querySelectorAll('.notification');
 const descs = document.querySelector('.desc');
+const appdescs = document.querySelector('.app__descs');
 
 function ActiveFrontEnd() {
     const hour = new Date().getHours();
@@ -35,15 +36,14 @@ function ActiveFrontEnd() {
     }
 }
 
-
-
 // function Post Data
 function setTimess() {
 
     const hour = new Date().getHours();
     const minute = new Date().getMinutes();
     const second = new Date().getSeconds();
-    const day = new Date().getDay() + 1;
+    const day = new Date().getDay();
+
     //console.log(day);
     // export data
     hours.innerHTML = (hour < 10) ? '0' + hour : hour;
@@ -51,8 +51,9 @@ function setTimess() {
     seconds.innerHTML = (second < 10) ? '0' + second : second;
     // one
     if (day === 0) {
-
+        appcontent.style.display = 'none';
     } else if (day > 0 && day < 6) {
+        appdescs.style.display = 'none';
         if (hour === 7 && minute === 45 && second === 0) {
             /**
              * New Data auto
@@ -64,7 +65,7 @@ function setTimess() {
             var request = new XMLHttpRequest();
             request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
             request.send(formData);
-            const modifi = document.querySelector('.app_desc');
+
 
         } else if (hour === 12 && minute === 00 && second === 0) {
             /**
@@ -78,7 +79,7 @@ function setTimess() {
             request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
             request.send(formData);
 
-        } else if (hour === 17 && minute === 10 && second === 0) {
+        } else if (hour === 22 && minute === 29 && second === 0) {
             /**
              * New Data auto
              */
@@ -104,7 +105,7 @@ function setTimess() {
             var request = new XMLHttpRequest();
             request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
             request.send(formData);
-            const modifi = document.querySelector('.app_desc');
+
 
         } else if (hour === 12 && minute === 00 && second === 0) {
             /**
@@ -126,8 +127,8 @@ function setTimess() {
     const m = new Date().getMonth() + 1;
     const y = new Date().getFullYear();
 
-    dates.innerHTML = d;
-    months.innerHTML = m;
+    dates.innerHTML = (d < 10) ? '0' + d : d;
+    months.innerHTML = (m < 10) ? '0' + m : m;
     years.innerHTML = y;
 }
 setInterval(setTimess, 1000);
