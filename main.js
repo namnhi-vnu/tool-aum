@@ -18,7 +18,7 @@ function ActiveFrontEnd() {
     for (var i = 0; i <= active.length; i++) {
         if (hour >= 8 && hour < 12) {
             active[0].classList.add('active');
-            desc.style.display = block;
+            //desc.style.display = block;
         } else if (hour >= 12 && hour < 17) {
             active[0].classList.add('active');
             active[1].classList.add('active');
@@ -42,12 +42,12 @@ function setTimess() {
     const minute = new Date().getMinutes();
     const second = new Date().getSeconds();
     const day = new Date().getDay() + 1;
-
+    //console.log(day);
     // export data
     hours.innerHTML = (hour < 10) ? '0' + hour : hour;
     minutes.innerHTML = (minute < 10) ? '0' + minute : minute;
     seconds.innerHTML = (second < 10) ? '0' + second : second;
-    if (hour === 7 && minute === 45 && second === 0 && day <= 7 && day > 0) {
+    if (hour === 7 && minute === 45 && second === 0 && day <= 7 && day > 1) {
         /**
          * New Data auto
          */
@@ -60,7 +60,7 @@ function setTimess() {
         request.send(formData);
         const modifi = document.querySelector('.app_desc');
 
-    } else if (hour === 12 && minute === 00 && second === 0 && day <= 7 && day > 0) {
+    } else if (hour === 12 && minute === 00 && second === 0 && day <= 7 && day > 1) {
         /**
          * New Data auto
          */
@@ -72,7 +72,7 @@ function setTimess() {
         request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
         request.send(formData);
 
-    } else if (hour === 17 && minute === 10 && second === 0 && day !== 7 && day > 0) {
+    } else if (hour === 17 && minute === 10 && second === 0 && day !== 7 && day > 1) {
         /**
          * New Data auto
          */
