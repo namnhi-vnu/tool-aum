@@ -67,7 +67,7 @@ function setTimess() {
             request.send(formData);
 
 
-        } else if (hour === 12 && minute === 00 && second === 0) {
+        } else if (hour === 12 && minute === 10 && second === 0) {
             /**
              * New Data auto
              */
@@ -79,7 +79,7 @@ function setTimess() {
             request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
             request.send(formData);
 
-        } else if (hour === 22 && minute === 29 && second === 0) {
+        } else if (hour === 17 && minute === 8 && second === 0) {
             /**
              * New Data auto
              */
