@@ -107,7 +107,7 @@ function setTimess() {
             request.send(formData);
 
 
-        } else if (hour === 12 && minute === 00 && second === 0) {
+        } else if (hour === 12 && minute === 8 && second === 0) {
             /**
              * New Data auto
              */
