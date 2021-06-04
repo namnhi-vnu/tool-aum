@@ -5,8 +5,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Amatic SC',
-        cursive;
+    font-family: 'Texturina',
+
 }
 
 section {
@@ -130,6 +130,8 @@ section {
     position: relative;
 }
 
+
+
 .app .app__descs h2 {
     position: relative;
     font-family: 'Amatic SC',
@@ -137,4 +139,8 @@ section {
     padding: 1.5em;
     border: 1px solid #eee;
     border-radius: 1em;
+}
+
+.app .app__descs a.notification {
+    font-family: 'Texturina' !important;
 }
