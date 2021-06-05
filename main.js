@@ -15,19 +15,19 @@ function ActiveFrontEnd() {
     const hour = new Date().getHours();
     const minute = new Date().getMinutes();
     const second = new Date().getSeconds();
-
+    var ampm = hour >= 12 ? 'pm' : 'am';
     for (var i = 0; i <= active.length; i++) {
 
-        if (hour >= 8 && minute < 20) {
+        if (hour >= 8 && hour < 12) {
             active[0].classList.add('active');
             if (second === 0) {
                 descs.style.display = block;
             }
-        } else if (hour === 12 && minute < 5) {
+        } else if (hour >= 12 && hour < 13) {
             active[0].classList.add('active');
             active[1].classList.add('active');
             descs.innerText = 'Đã Chấm Công';
-        } else if (hour === 12 && minute > 35) {
+        } else if (hour > 12 && hour < 17 && minute > 35) {
             active[0].classList.add('active');
             active[1].classList.add('active');
             active[2].classList.add('active');
@@ -58,58 +58,61 @@ function setTimess() {
     // one
     if (day === 0) {
         appcontent.style.display = 'none';
-    } else if (day > 0 && day < 6) {
+    } else if (day > 0 && day <= 6) {
         appdescs.style.display = 'none';
-        if (hour === 7 && minute === 45 && second === 0) {
-            /**
-             * New Data auto
-             */
-            var formData = new FormData();
-            formData.append('entry.196786207', 'Hoàng Anh Văn');
-            formData.append('entry.718595202', 'Dev');
-            formData.append('entry.1580319989', 'Bắt đầu ca sáng');
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
-            request.send(formData);
+        if (day > 0 && day < 6) {
+            if (hour === 7 && minute === 45 && second === 0) {
+                /**
+                 * New Data auto
+                 */
+                var formData = new FormData();
+                formData.append('entry.196786207', 'Hoàng Anh Văn');
+                formData.append('entry.718595202', 'Dev');
+                formData.append('entry.1580319989', 'Bắt đầu ca sáng');
+                var request = new XMLHttpRequest();
+                request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
+                request.send(formData);
 
 
-        } else if (hour === 12 && minute === 5 && second === 0) {
-            /**
-             * New Data auto
-             */
-            var formData = new FormData();
-            formData.append('entry.196786207', 'Hoàng Anh Văn');
-            formData.append('entry.718595202', 'Dev');
-            formData.append('entry.1580319989', 'Kết thúc ca sáng');
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
-            request.send(formData);
+            } else if (hour === 12 && minute === 5 && second === 0) {
+                /**
+                 * New Data auto
+                 */
+                var formData = new FormData();
+                formData.append('entry.196786207', 'Hoàng Anh Văn');
+                formData.append('entry.718595202', 'Dev');
+                formData.append('entry.1580319989', 'Kết thúc ca sáng');
+                var request = new XMLHttpRequest();
+                request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
+                request.send(formData);
 
-        } else if (hour === 12 && minute === 35 && second === 0) {
-            /**
-             * New Data auto
-             */
-            var formData = new FormData();
-            formData.append('entry.196786207', 'Hoàng Anh Văn');
-            formData.append('entry.718595202', 'Dev');
-            formData.append('entry.1580319989', 'Bắt đầu ca chiều');
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
-            request.send(formData);
+            } else if (hour === 12 && minute === 35 && second === 0) {
+                /**
+                 * New Data auto
+                 */
+                var formData = new FormData();
+                formData.append('entry.196786207', 'Hoàng Anh Văn');
+                formData.append('entry.718595202', 'Dev');
+                formData.append('entry.1580319989', 'Bắt đầu ca chiều');
+                var request = new XMLHttpRequest();
+                request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
+                request.send(formData);
 
-        } else if (hour === 17 && minute === 8 && second === 0) {
-            /**
-             * New Data auto
-             */
-            var formData = new FormData();
-            formData.append('entry.196786207', 'Hoàng Anh Văn');
-            formData.append('entry.718595202', 'Dev');
-            formData.append('entry.1580319989', 'Kết thúc ca chiều');
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
-            request.send(formData);
+            } else if (hour === 17 && minute === 3 && second === 0) {
+                /**
+                 * New Data auto
+                 */
+                var formData = new FormData();
+                formData.append('entry.196786207', 'Hoàng Anh Văn');
+                formData.append('entry.718595202', 'Dev');
+                formData.append('entry.1580319989', 'Kết thúc ca chiều');
+                var request = new XMLHttpRequest();
+                request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfbx7aa2dCwLKuo4Ksy5EppGKEx5cOvvD1aXuzJBSj3MjSVxg/formResponse");
+                request.send(formData);
 
+            }
         }
+
     } else if (day == 6) {
         if (hour === 7 && minute === 45 && second === 0) {
             /**
