@@ -10,34 +10,54 @@ const seconds = document.querySelector('.second');
 const active = document.querySelectorAll('.notification');
 const descs = document.querySelector('.desc');
 const appdescs = document.querySelector('.app__descs');
+const days = document.querySelector('#days');
 
 function ActiveFrontEnd() {
     const hour = new Date().getHours();
     const minute = new Date().getMinutes();
     const second = new Date().getSeconds();
-    var ampm = hour >= 12 ? 'pm' : 'am';
-    for (var i = 0; i <= active.length; i++) {
+    //var ampm = hour >= 12 ? 'pm' : 'am';
+    const day = new Date().getDay();
+    days.innerHTML = day;
+    if (day > 0 && day < 6) {
+        for (var i = 0; i <= active.length; i++) {
 
-        if (hour >= 8 && hour < 12) {
-            active[0].classList.add('active');
-            if (second === 0) {
-                descs.style.display = block;
+            if (hour >= 8 && hour < 12) {
+                active[0].classList.add('active');
+                if (second === 0) {
+                    descs.style.display = block;
+                }
+            } else if (hour >= 12 && hour < 13) {
+                active[0].classList.add('active');
+                active[1].classList.add('active');
+                descs.innerText = 'Đã Chấm Công';
+            } else if (hour > 12 && hour < 17 && minute > 35) {
+                active[0].classList.add('active');
+                active[1].classList.add('active');
+                active[2].classList.add('active');
+                descs.innerText = 'Đã Chấm Công';
+            } else if (hour >= 17 && hour <= 23 && minute < 59) {
+                active[0].classList.add('active');
+                active[1].classList.add('active');
+                active[2].classList.add('active');
+                active[3].classList.add('active');
+                descs.innerText = 'Đã Chấm Công';
             }
-        } else if (hour >= 12 && hour < 13) {
-            active[0].classList.add('active');
-            active[1].classList.add('active');
-            descs.innerText = 'Đã Chấm Công';
-        } else if (hour > 12 && hour < 17 && minute > 35) {
-            active[0].classList.add('active');
-            active[1].classList.add('active');
-            active[2].classList.add('active');
-            descs.innerText = 'Đã Chấm Công';
-        } else if (hour >= 17 && hour <= 23 && minute < 59) {
-            active[0].classList.add('active');
-            active[1].classList.add('active');
-            active[2].classList.add('active');
-            active[3].classList.add('active');
-            descs.innerText = 'Đã Chấm Công';
+        }
+    } else if (day === 6) {
+        for (var i = 0; i <= active.length; i++) {
+            active[2].style.display = 'none';
+            active[3].style.display = 'none';
+            if (hour >= 8 && hour < 12) {
+                active[0].classList.add('active');
+                if (second === 0) {
+                    descs.style.display = block;
+                }
+            } else if (hour >= 12 && hour < 13) {
+                active[0].classList.add('active');
+                active[1].classList.add('active');
+                descs.innerText = 'Đã Chấm Công';
+            }
         }
     }
 }
