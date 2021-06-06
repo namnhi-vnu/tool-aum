@@ -18,7 +18,12 @@ function ActiveFrontEnd() {
     const second = new Date().getSeconds();
     //var ampm = hour >= 12 ? 'pm' : 'am';
     const day = new Date().getDay();
-    days.innerHTML = day;
+    if (day <= 6) {
+        days.innerHTML = 'Thứ : ' + (day + 1);
+    } else {
+        days.innerHTML = 'Chủ Nhật'
+    }
+
     if (day > 0 && day < 6) {
         for (var i = 0; i <= active.length; i++) {
 
